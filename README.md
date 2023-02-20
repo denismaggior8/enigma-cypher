@@ -2,7 +2,11 @@
 
 ![](img/FMA-imitation-game.jpg)
 
-This repo contains sample code to reproduce the Enigma cyper machine in Python. It resambles the Enigma M3 model (with 3 rotors), as seen in the movie [The imitation game](https://en.wikipedia.org/wiki/The_Imitation_Game), with the following configurations:
+This repo contains sample code to reproduce the Enigma cyper machine in Python. 
+
+For the sake fo simplicity, it resambles the Enigma M3 model (with 3 rotors), __similar but not equals to__ the one seen in the movie [The imitation game](https://en.wikipedia.org/wiki/The_Imitation_Game).
+
+Here after the machine configurations:
 
 - Rotor 1 wiring I
 - Rotor 2 wiring II
