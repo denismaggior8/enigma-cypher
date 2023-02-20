@@ -72,7 +72,7 @@ def process(input_letter, counter_rotor_1, counter_rotor_2, counter_rotor_3):
     print('Scrambled letter from rotor 1: {}'.format(scrambled_letter_from_rotor_1))
 
     scrambled_letter_from_etw = alphabet[(alphabet.index(scrambled_letter_from_rotor_1)-shift_rotor_1) % rotor_1_length]
-    print('Scrambled letter from etw: {}'.format(scrambled_letter_from_etw))
+    print('Scrambled letter from etw to lamp: {}'.format(scrambled_letter_from_etw))
 
 def usage():
     print('Usage:\n\t# python enigma.py <input_letter> <rotor_1_counter> <rotor_2_counter> <rotor_3_counter>')
