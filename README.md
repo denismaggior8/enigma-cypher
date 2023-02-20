@@ -47,7 +47,7 @@ Scrambled letter from reflector: x
 Scrambled letter from rotor 3: k
 Scrambled letter from rotor 2: d
 Scrambled letter from rotor 1: a
-Scrambled letter from etw: z
+Scrambled letter from etw to lamp: z
 ```
 
 This demo does not implement the automatic rotors increment, since it's just made to reproduce the letter encription with specific rotors position. 
