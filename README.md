@@ -2,7 +2,7 @@
 
 ![](img/FMA-imitation-game.jpg)
 
-This repo contains sample code to reproduce the Enigma cyper machine in Python. It resamble the Enigma M3 model (3 rotors), as seen in the movie [The imitation game](https://en.wikipedia.org/wiki/The_Imitation_Game), with the following configurations:
+This repo contains sample code to reproduce the Enigma cyper machine in Python. It resambles the Enigma M3 model (with 3 rotors), as seen in the movie [The imitation game](https://en.wikipedia.org/wiki/The_Imitation_Game), with the following configurations:
 
 - Rotor 1 wiring I
 - Rotor 2 wiring II
@@ -11,7 +11,9 @@ This repo contains sample code to reproduce the Enigma cyper machine in Python. 
 - Reflector model UKW-B
 - No steckerboard (a.k.a. plugboard) has been implemented, so each letter enters "as it is" into the first rotor.
 
-To run:
+Wires, rotors and electric contacts have been substituted with circular arrays, variables and counters to encrypt a single letter given a specific rotors position. 
+
+How to run it:
 
 ```console
 $ python3 enigma.py <input_letter> <rotor_1_counter> <rotor_2_counter> <rotor_3_counter>
@@ -43,5 +45,7 @@ Scrambled letter from rotor 2: d
 Scrambled letter from rotor 1: a
 Scrambled letter from etw: z
 ```
+
+This demo does not implement the automatic rotors increment, since it's just made to reproduce the letter encription with specific rotors position. 
 
 Reference: https://piotte13.github.io/enigma-cipher/
