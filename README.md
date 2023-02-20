@@ -5,8 +5,9 @@ This repo contains sample code to reproduce the Enigma cyper machine in Python. 
 - Rotor 1 wiring I
 - Rotor 2 wiring II
 - Rotor 3 wiring III
+- Each rotor uses the 0 ring setting ("A" ring setting)
 - Reflector model UKW-B
-- No steckerboard has been implemented so far
+- No steckerboard (a.k.a. plugboard) has been implemented so far
 
 To run:
 
