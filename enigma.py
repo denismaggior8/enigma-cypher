@@ -75,8 +75,8 @@ def process(input_letter, counter_rotor_1, counter_rotor_2, counter_rotor_3):
     print('Scrambled letter from etw: {}'.format(scrambled_letter_from_etw))
 
 def usage():
-    print('Usage:\n\t# python enigma.py <input letter> <rotor 1 counter> <rotor 2 counter> <rotor 3 counter>')
-    print('i.e.:\n\t# python enigma.py z 0 0 1')
+    print('Usage:\n\t# python enigma.py <input_letter> <rotor_1_counter> <rotor_2_counter> <rotor_3_counter>')
+    print('i.e.:\n\t# python enigma.py z 1 0 0')
 
 def main(input_letter,counter_rotor_1,counter_rotor_2,counter_rotor_3):
     if input_letter.lower() not in alphabet:

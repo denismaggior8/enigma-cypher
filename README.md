@@ -1,12 +1,20 @@
 # Enigma Cypher
 
-This repo contains sample code to reproduce the Enigma cyper machine in Python.
+This repo contains sample code to reproduce the Enigma cyper machine in Python. It resamble the Enigma M3 model (3 rotors) with the following configurations:
+
+- Rotor 1 wiring I
+- Rotor 2 wiring II
+- Rotor 3 wiring III
+- Reflector model UKW-B
+- No steckerboard has been implemented so far
 
 To run:
 
 ```console
-$ python3 enigma.py <input letter> <rotor 1 counter> <rotor 2 counter> <rotor 3 counter>
+$ python3 enigma.py <input_letter> <rotor_1_counter> <rotor_2_counter> <rotor_3_counter>
 ```
+
+Rotor counters are a mechanism to shift each rotor by N positions. They can be any integer you want since they are translated to 0 up to 25 (0=a, 25=z).
 
 For example:
 
