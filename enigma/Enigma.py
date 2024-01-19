@@ -14,7 +14,8 @@ class Enigma:
         return self.process_char(char)
 
     def process_char(self, char):
-        scrabled_char = char
+        scrabled_char = self.plugboard.switch_char(char)
+        print("Scrambled letter from plugboard: "+scrabled_char)
         rotor_nr = 0
         for rotor in self.rotors:
             scrabled_char = rotor.scramble(scrabled_char)

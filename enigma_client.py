@@ -13,7 +13,7 @@ reflector = ReflectorUKWB()
 
 enigma = EnigmaThreeRotors(plugboard,rotor1,rotor2,rotor3,reflector)
 
-print(enigma.input_char("z"))
+print(enigma.input_char("a"))
 
 # print(plugboard)
 #print(rotor1)
