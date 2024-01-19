@@ -10,6 +10,7 @@ class Enigma:
         self.reflector = reflector
 
     def input_char(self,char):
+        print("Input char: "+ char)
         return self.process_char(char)
 
     def process_char(self, char):
