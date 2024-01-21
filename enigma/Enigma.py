@@ -39,7 +39,9 @@ class Enigma:
                 scrambled_char = rotor.scramble_letter_index_reverse(Enigma.alphabet,(rotor.wiring.index(Enigma.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position))) - rotor.position))
             iteration -=1
             print("Scrambled letter from rotor "+ str(iteration+1) + ": "+scrambled_char)   
-        scrambled_char = self.etw.switch_char(scrambled_char)
+        scrambled_char = self.etw.switch_char(scrambled_char,-self.rotors[iteration].position)
+        
+       
         print("Scrambled letter from ETW: "+scrambled_char)
         return scrambled_char
     

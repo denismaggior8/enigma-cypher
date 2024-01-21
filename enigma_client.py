@@ -7,7 +7,7 @@ from enigma.EnigmaThreeRotors import EnigmaThreeRotors
 from enigma.EtwPassthrough import EtwPassthrough
 
 plugboard = PlugboardPassthrough()
-rotor1 = RotorWiringI(0)
+rotor1 = RotorWiringI(1)
 rotor2 = RotorWiringII(0)
 rotor3 = RotorWiringIII(0)
 reflector = ReflectorUKWB()
