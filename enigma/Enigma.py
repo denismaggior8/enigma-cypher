@@ -1,26 +1,46 @@
+from string import ascii_lowercase
 class Enigma:
     
     plugboard = None
     rotors = None
     reflector = None
 
+    alphabet = list(ascii_lowercase)
+
     def __init__(self, plugboard, rotors, reflector):
         self.plugboard = plugboard
         self.rotors = rotors
         self.reflector = reflector
+    
 
     def input_char(self,char):
         print("Input char: "+ char)
         return self.process_char(char)
 
     def process_char(self, char):
-        scrabled_char = self.plugboard.switch_char(char)
-        print("Scrambled letter from plugboard: "+scrabled_char)
-        rotor_nr = 0
+        scrambled_char = self.plugboard.switch_char(char)
+        print("Scrambled letter from plugboard: "+scrambled_char)
+        iteration = 0
         for rotor in self.rotors:
-            scrabled_char = rotor.scramble(scrabled_char)
-            rotor_nr += 1
-            print("Scrambled letter from rotor "+ str(rotor_nr)+ ": "+scrabled_char)
-        scrabled_char = self.reflector.scramble(scrabled_char)
-        print("Scrambled letter from reflector: "+scrabled_char)
-        return scrabled_char
+            if iteration == 0:
+                scrambled_char = rotor.scramble_letter_index(Enigma.alphabet.index(scrambled_char))
+            else:
+                scrambled_char = rotor.scramble_letter_index(Enigma.alphabet.index(scrambled_char)-self.rotors[iteration-1].position) 
+            iteration +=1
+            print("Scrambled letter from rotor "+ str(iteration) + ": "+scrambled_char)
+        scrambled_char = self.reflector.scramble_letter_index((Enigma.alphabet.index(scrambled_char)-self.rotors[iteration-1].position))
+        print("Scrambled letter from reflector: "+scrambled_char)
+        for rotor in reversed(self.rotors):
+            if iteration == len(self.rotors):
+                scrambled_char = rotor.scramble_letter_index_reverse(Enigma.alphabet,(rotor.wiring.index(Enigma.shift_letter(scrambled_char,rotor.position))-rotor.position))
+            else:
+                scrambled_char = rotor.scramble_letter_index_reverse(Enigma.alphabet,(rotor.wiring.index(Enigma.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position))) - rotor.position))
+            iteration -=1
+            print("Scrambled letter from rotor "+ str(iteration+1) + ": "+scrambled_char)   
+
+        return scrambled_char
+    
+    @staticmethod        
+    def shift_letter(letter,shift):
+	    return Enigma.alphabet[(Enigma.alphabet.index(letter)+shift) % len(Enigma.alphabet)]
+
