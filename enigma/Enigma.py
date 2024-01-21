@@ -4,13 +4,15 @@ class Enigma:
     plugboard = None
     rotors = None
     reflector = None
+    etw = None
 
     alphabet = list(ascii_lowercase)
 
-    def __init__(self, plugboard, rotors, reflector):
+    def __init__(self, plugboard, rotors, reflector,etw):
         self.plugboard = plugboard
         self.rotors = rotors
         self.reflector = reflector
+        self.etw = etw
     
 
     def input_char(self,char):
@@ -37,7 +39,8 @@ class Enigma:
                 scrambled_char = rotor.scramble_letter_index_reverse(Enigma.alphabet,(rotor.wiring.index(Enigma.shift_letter(scrambled_char, (rotor.position - self.rotors[iteration].position))) - rotor.position))
             iteration -=1
             print("Scrambled letter from rotor "+ str(iteration+1) + ": "+scrambled_char)   
-
+        scrambled_char = self.etw.switch_char(scrambled_char)
+        print("Scrambled letter from ETW: "+scrambled_char)
         return scrambled_char
     
     @staticmethod        
