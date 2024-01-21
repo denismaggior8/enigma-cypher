@@ -38,6 +38,15 @@ rotor3.set_position(25)
 if enigma.input_char("a") != 's':
     print("Error")
 
+rotor1.set_position(25)
+rotor2.set_position(25)
+
+if enigma.input_char("a") != 'f':
+    print("Error")
+
+if enigma.input_char("z") != 't':
+    print("Error")
+
 # print(plugboard)
 #print(rotor1)
 #print(rotor2)
