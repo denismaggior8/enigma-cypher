@@ -11,14 +11,10 @@ class Rotor:
 
     def set_position(self,position):
         self.position = position % len(self.wiring)
-
-    def scramble_letter_index(self, letter_index):
-        scrambled_letter_index_from_rotor = self.wiring.index(self.wiring[(self.position + letter_index) % len(self.wiring)])
-        return self.wiring[scrambled_letter_index_from_rotor]
-    
-    def scramble_letter_index_reverse(self, alphabet, letter_index):
-        scrambled_letter_index_from_rotor = alphabet.index(alphabet[(self.position + letter_index) % len(alphabet)])
-        return alphabet[scrambled_letter_index_from_rotor]
+        
+    def scramble_letter_index(self, dictionary, letter_index):
+        scrambled_letter_index_from_rotor = dictionary.index(dictionary[(self.position + letter_index) % len(dictionary)])
+        return dictionary[scrambled_letter_index_from_rotor]
 
     def __init__(self, wiring, position):
         self.wiring = wiring
