@@ -1,2 +1,0 @@
-ciphertext = "YJPYITREDSYUPIU"
-cribtext = "THISXISXWORKING"
