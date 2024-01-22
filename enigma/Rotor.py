@@ -4,7 +4,6 @@ from string import ascii_lowercase
 class Rotor:
     wiring = None
     position = 0
-    alphabet = list(ascii_lowercase)
     
     def increment_position(self):
         self.position = (self.position + 1) % len(self.wiring)
