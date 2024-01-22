@@ -47,6 +47,16 @@ if enigma.input_char("a") != 'f':
 if enigma.input_char("z") != 't':
     print("Error")
 
+rotor2.set_position(300)
+
+if enigma.input_char("z") != 'q':
+    print("Error")
+
+if enigma.input_char("q") != 'z':
+    print("Error")
+
+
+
 # print(plugboard)
 #print(rotor1)
 #print(rotor2)
